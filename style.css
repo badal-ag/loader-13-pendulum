@@ -1,0 +1,140 @@
+* {
+    margin: 0; padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.loading {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pendulum-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ball-first {
+    position: relative;
+}
+
+#ball-1, #ball-2, #ball-3, #ball-4, #ball-5, #ball-6, #ball-7 {
+    width: 1rem;
+    height: 1rem;
+    padding: 0.625rem;
+    border-radius: 50%;
+} 
+
+#ball-1 {
+    background: #315774;
+}
+
+#ball-2 {
+    background: #3d556f;
+    position: relative;
+}
+
+#ball-3 {
+    background-image: linear-gradient(to right, #5f4f5f, #8a484b);
+    position: relative;
+}
+
+#ball-4 {
+    background-image: linear-gradient(to right, #8a484b, #b14239);
+    position: relative;
+}
+
+#ball-5 {
+    background: #b14239;
+    position: relative;
+}
+
+#ball-6 {
+    background: #cf3d2b;
+    position: relative;
+}
+
+#ball-7 {
+    background: #da3b26;
+    position: relative;
+}
+
+#ball-2::before, #ball-3::before, #ball-4::before, #ball-5::before, #ball-6::before {
+    content: '';
+    position: absolute;
+    bottom: -28px; left: 5%;
+    width: 95%;
+    height: 10%;
+    background: rgba(119, 119, 119, 0.3);
+    border-radius: 50%;
+    z-index: 100;
+    filter: blur(2px);   
+}
+
+#shadow-1 {
+    content: '';
+    position: absolute;
+    bottom: -28px; left: 5%;
+    width: 95%;
+    height: 10%;
+    background: rgba(119, 119, 119, 0.3);
+    border-radius: 50%;
+    z-index: 100;
+    filter: blur(2px);
+}
+
+#shadow-2 {
+    content: '';
+    position: relative;
+    bottom: -28px; left: 5%;
+    width: 100%;
+    height: 10%;
+    background: rgba(119, 119, 119, 0.3);
+    border-radius: 50%;
+    z-index: 100;
+    filter: blur(2px);
+}
+
+.first { animation: left 0.5s ease-out infinite alternate; }
+
+.last { animation: right 0.5s ease-in infinite alternate; }
+
+.first-shadow { animation: leftShadow 0.5s ease-out infinite alternate; }
+
+.last-shadow { animation: rightShadow 0.5s ease-in 0.5s infinite alternate; }
+
+.loader {
+    position: relative;
+    margin-top: 40px;
+}
+
+.loading span {
+    font-size: 30px;
+    color: #3a3837;
+}
+
+@keyframes left {
+    0%,
+    47% {
+        transform: rotate(0) translateX(0);
+    }
+    100% {
+        transform: rotate(50deg) translateX(-10rem);
+    }
+}
+
+@keyframes right {
+    0% {
+        transform: rotate(-50deg) translateX(10rem);
+    }
+    47%,
+    100% {
+        transform: rotate(0) translateX(0);
+    }
+}
+
+
+
